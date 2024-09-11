@@ -16,8 +16,8 @@ const app =  express()
 
 app.use(express.json())
 
-app.listen(3000, () => {
-    console.log("server is listening to the port 3000")
+app.listen(8000, () => {
+    console.log("server is listening to the port 8000")
 })
 
 app.use('/backend/user', userRouter)
@@ -26,10 +26,10 @@ app.use('/backend/auth', authRouter)
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500
-    const message = err.message || "Internal Server Error"
+    const message = err.message || "Internal Server Error";
     return res.status(statusCode).json({
         success: false,
         statusCode,
-        message
-    })
-})
+        message,
+    });
+});
