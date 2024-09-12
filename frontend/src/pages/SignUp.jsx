@@ -36,14 +36,15 @@ export default function SignUp() {
       }
       setLoading(false)
       setError(null)
-      navigate('/signin')
+      navigate('/sign-in')
       
     }catch(error){
       setLoading(false)
       setError(error.message)
     }
   };
-  console.log(formData);
+
+  console.log(formData, 'FormData');
 
   return (
     <div className="p-3 max-w-lg mx-auto">
@@ -76,8 +77,8 @@ export default function SignUp() {
       </form>
       <div className="flex gap-2 mt-5">
         <p>Have an account?</p>
-        <Link to="/signin">
-          <span className="text-blue-700">Singin</span>
+        <Link to="/sign-in">
+          <span className="text-blue-700">Signin</span>
         </Link>
       </div>
       {error && <p className="text-red-500 mt-5">{error}</p>}
