@@ -22,6 +22,7 @@ app.listen(8000, () => {
 
 app.use('/backend/user', userRouter)
 
+
 app.use('/backend/auth', authRouter)
 
 app.use((err, req, res, next) => {
